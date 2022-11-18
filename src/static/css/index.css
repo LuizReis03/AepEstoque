@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    background-image: url(../img/fundoLogin.png);
+}
+
+.fundo-login{
+    background-color: #3F74FC;
+    width: 60%;
+    margin: auto;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.box-login{
+    background-color: rgb(245, 245, 245);
+    border-top-left-radius: 20px;
+    width: 70%;
+    margin-top: 10%;
+    padding: 1.5% 2%;
+}
+
+.titulo-login{
+    color: #3F74FC;
+    text-align: center;
+    font-size: 3.2vw;
+    margin-bottom: 2%;
+}
+
+.titulo-campo-login{
+    font-size: 1.2vw;
+    font-weight: 600;
+    margin-left: 6% !important;
+}
+
+.campo-login{
+    width: 85%;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    border-color: #3F74FC;
+    padding: 2% 2%;
+    margin-left: 5%;
+    background-color: white;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: solid 2px #3F74FC;
+    outline: 0;
+} 
+
+.link-esq-senha{
+    text-decoration-line: underline;
+    text-align: center;
+    margin-top: 0;
+    font-size: 1.3vw;
+}
+
+.btn-login{
+    margin-left: 35%;
+    margin-top: 3%;
+    padding: 2% 7%;
+    background-color: #3F74FC;
+    border: #3F74FC solid 1px;
+    border-radius: 6px;
+    color: white;
+    margin-bottom: 4%;
+    width: 30% !important;
+}
+
+.retanguloLogin{
+    margin-left: 3%;
+    margin-top: 3%;
+}

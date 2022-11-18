@@ -1,0 +1,74 @@
+.titulo-lista{
+    text-align: center;
+    font-size: 2.2vw;
+}
+
+.box-lista{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lista{
+    padding: 1.5% 0%;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 85%;
+    max-width: 88%;
+    justify-content: flex-start;
+}
+
+.titulo-campo-lista{
+    font-size: 1.2vw;
+    margin-left: 3%;
+    margin-right: 1%;
+}
+
+.valor-campo-lista{
+    font-size: 1.1vw;
+}
+
+.descricao-campo-lista{
+    font-size: 1.1vw;
+    max-width: 25%;
+    word-break: break-all;
+}
+
+.btn-lista-edit{
+    margin-left: 12%;
+    background-color: #cecece;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.5% 1.5%;
+    background-image: url("../img/pencil.png");
+    background-size: 1.5vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+.btn-lista-edit:hover{
+    background-color: #adadad;
+}
+
+.btn-lista-delete{
+    margin-left: 2%;
+    background-color: #cecece;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    padding: 0.5% 1.5%;
+    background-image: url("../img/lixo.png");
+    background-size: 1.7vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+}
+
+.btn-lista-delete:hover{
+    background-color: #adadad;
+}
