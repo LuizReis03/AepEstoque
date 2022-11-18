@@ -8,16 +8,16 @@ import api from '../services/api';
 //Static
 import "../static/css/lista.css";
 
-function ListaProdutos() {
+function ListaFornecedores() {
 
 
     const accessToken = localStorage.getItem('accessToken');
 
-    const [fornecedor, setFornecedor] = useState([]);
+    const [fornecedores, setFornecedores] = useState([]);
 
     let navigate = useNavigate();
 
-    async function editProduct(id) {
+    async function editProvider(id) {
         try {
             navigate(`/cadastroFornecedor/${id}`)
         } catch (error) {
@@ -25,73 +25,78 @@ function ListaProdutos() {
         }
     }
 
-    async function deleteProduct(id) {
+    async function deleteProvider(id) {
         var check = window.confirm("Deseja excluir o item selecionado?");
 
-        if (check == false) return
+        if (check === false) return
 
         try {
-            await api.delete(`api/v1/items/${id}`, {
+            await api.delete(`api/v1/providers/${id}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
             })
 
-            setFornecedor(fornecedor.filter(fornecedor => fornecedor.id !== id))
+            setFornecedores(fornecedores.filter(fornecedor => fornecedor.id !== id))
         } catch (err) {
             alert('Delete failed! Try again.');
         }
     }
 
-    async function fetchMoreProducts() {
-        const response = await api.get('api/v1/items', {
+    async function fetchMoreProviders() {
+        const response = await api.get('api/v1/providers', {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }
-            
+
         });
 
         console.log([response.data])
-        setFornecedor(response.data.data)
+        setFornecedores(response.data)
     }
 
     useEffect(() => {
-        fetchMoreProducts();
+        fetchMoreProviders();
     }, [])
 
     return (
         <div className="book-container">
             <Header/>
 
-            <h1 className='titulo-lista'>Produtos</h1>
-            <ul className='box-lista'>
-                {products.map(fornecedor => (
-                    <li className='lista' key={fornecedor.id}>
-
+            <h1 className='titulo-lista'>Fornecedores</h1>
+            <div className="book-container">
+                <ul className='box-lista'>
+                    {fornecedores.map(provider => 
+                        <li class="info-caixa-doacao" key = {provider.id}>
+                            
                         <strong className='titulo-campo-lista'>ID:</strong>
-                        <p className='valor-campo-lista'>{fornecedor.id}</p>
+                        <p className='valor-campo-lista'>{provider.id}</p>
                         <strong className='titulo-campo-lista'>NOME:</strong>
-                        <p className='valor-campo-lista'>{fornecedor.nome}</p>
-                        <strong className='titulo-campo-lista'>EMPRESA:</strong>
-                        <p className='valor-campo-lista'>{fornecedor.empresa}</p>
-                        <strong className='titulo-campo-lista'>TELEFONE:</strong>
-                        <p className='valor-campo-lista'>{fornecedor.telefone}</p>
-                        <strong className='titulo-campo-lista'>E-MAIL:</strong>
-                        <p className='valor-campo-lista'>{fornecedor.email}</p>
-                        
-                        <input className='btn-lista-edit' onClick={() => editProduct(fornecedor.id)}
+                        <p className='valor-campo-lista'>{provider.nome}</p>
+                        <strong className='titulo-campo-lista'>Empresa:</strong>
+                        <p className='descricao-campo-lista'>{provider.empresa}</p>
+                        <strong className='titulo-campo-lista'>Contato:</strong>
+                        <p className='valor-campo-lista'>{provider.contato}</p>
+                        <strong className='titulo-campo-lista'>Email:</strong>
+                        <p className='valor-campo-lista'>{provider.email}</p>
+
+                        <input className='btn-lista-edit' onClick={() => editProvider(provider.id)}
                          type="submit" value=""/>
                           
                     
-                        <input className='btn-lista-delete' onClick={() => deleteProduct(fornecedor.id)}
+                        <input className='btn-lista-delete' onClick={() => deleteProvider(provider.id)}
                          type="button" value=""/>
 
-                    </li>
-                ))}
-            </ul>
+                        </li>
+                    )}
+                </ul>
+            </div>
         </div>
     );
 
+
+
+
 }
 
-export default ListaProdutos;
+export default ListaFornecedores;

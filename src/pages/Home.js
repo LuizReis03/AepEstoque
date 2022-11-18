@@ -12,12 +12,24 @@ import Header from "../components/Header"
 import "../static/css/home.css";
 import mais from "../static/img/mais.png"
 import exclamacao from "../static/img/exclamacao.png"
+import { useNavigate } from 'react-router-dom';
+import { BiLogOut } from 'react-icons/bi';
 
 function Home() {
+
+    let navigate = useNavigate();
+
+    async function  logout(){
+        localStorage.clear();
+        navigate(`/`)
+    };
 
     return (
         <div>
             <Header />
+
+            <BiLogOut id = "btn-sair" onClick = {logout}/>
+            
                 <div className="boxes-cad">
                     <div className="box-cad">
                         <h3 className="titulo-cad">CADASTRO DE CATEGORIA</h3>
@@ -27,13 +39,13 @@ function Home() {
                     </div>
                     <div className="box-cad">
                         <h3 className="titulo-cad">CADASTRO DE PRODUTO</h3>
-                        <Link to="/cadastroProduto">
+                        <Link to="/cadastroProduto/0">
                             <img className="img-cad-home" src={mais} />
                         </Link>
                     </div>
                     <div className="box-cad">
                         <h3 className="titulo-cad">CADASTRO DE FORNECEDOR</h3>
-                        <Link to="/cadastroFornecedor">
+                        <Link to="/cadastroFornecedor/0">
                             <img className="img-cad-home" src={mais} />
                         </Link>
                     </div>

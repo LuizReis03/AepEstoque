@@ -6,8 +6,8 @@ import CadastroCategoria from './pages/CadastroCategoria';
 import CadastroProduto from './pages/CadastroProduto';
 import CadastroFornecedor from './pages/CadastroFornecedor';
 import CadastroFuncionario from './pages/CadastroFuncionario';
-import EditaProduto from './pages/EditaProduto';
 import ListaProdutos from './pages/ListaProdutos';
+import ListaFornecedores from './pages/ListaFornecedores';
 
 export default function App() {
     return (
@@ -22,11 +22,14 @@ export default function App() {
 
                 <Route exact path="/cadastroProduto/:productId" element={ <CadastroProduto /> } />
 
-                <Route exact path="/cadastroFornecedor" element={ <CadastroFornecedor /> } />
+                <Route exact path="/cadastroFornecedor/:providerId" element={ <CadastroFornecedor /> } />
 
                 <Route exact path="/cadastroFuncionario" element={ <CadastroFuncionario /> } />
 
                 <Route exact path="/listaProdutos" element={ <ListaProdutos /> } />
+
+                <Route exact path="/listaFornecedores" element={ <ListaFornecedores /> } />
+
 
             </Routes>
         </Router>

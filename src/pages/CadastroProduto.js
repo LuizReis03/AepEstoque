@@ -132,6 +132,8 @@ function CadastroProduto() {
                 });
             }
 
+            navigate(`/ListaProdutos`)
+
         } catch (err) {
             console.log(err)
             alert('Insira os dados corretamente e tente novamente!!!');

@@ -28,7 +28,7 @@ function ListaProdutos() {
     async function deleteProduct(id) {
         var check = window.confirm("Deseja excluir o item selecionado?");
 
-        if (check == false) return
+        if (check === false) return
 
         try {
             await api.delete(`api/v1/items/${id}`, {
@@ -50,8 +50,6 @@ function ListaProdutos() {
             }
             
         });
-
-        console.log([response.data])
         setProducts(response.data.data)
     }
 

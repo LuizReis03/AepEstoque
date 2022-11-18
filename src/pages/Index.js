@@ -29,7 +29,7 @@ function Login() {
             localStorage.setItem('accessToken', response.data);
 
 
-            navigate("./cadastroProduto/0", { replace: true });
+            navigate("/home", { replace: true });
         } catch (err) {
             console.log(err)
             alert('Insira os dados corretamente e tente novamente!!!');
