@@ -64,17 +64,16 @@ function ListaFornecedores() {
             <Header/>
 
             <h1 className='titulo-lista'>Fornecedores</h1>
-            <div className="book-container">
                 <ul className='box-lista'>
                     {fornecedores.map(provider => 
-                        <li class="info-caixa-doacao" key = {provider.id}>
+                        <li className='lista' key = {provider.id}>
                             
                         <strong className='titulo-campo-lista'>ID:</strong>
                         <p className='valor-campo-lista'>{provider.id}</p>
                         <strong className='titulo-campo-lista'>NOME:</strong>
                         <p className='valor-campo-lista'>{provider.nome}</p>
                         <strong className='titulo-campo-lista'>Empresa:</strong>
-                        <p className='descricao-campo-lista'>{provider.empresa}</p>
+                        <p className='valor-campo-lista'>{provider.empresa}</p>
                         <strong className='titulo-campo-lista'>Contato:</strong>
                         <p className='valor-campo-lista'>{provider.contato}</p>
                         <strong className='titulo-campo-lista'>Email:</strong>
@@ -90,7 +89,6 @@ function ListaFornecedores() {
                         </li>
                     )}
                 </ul>
-            </div>
         </div>
     );
 

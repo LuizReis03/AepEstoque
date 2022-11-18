@@ -27,8 +27,6 @@ function Home() {
     return (
         <div>
             <Header />
-
-            <BiLogOut id = "btn-sair" onClick = {logout}/>
             
                 <div className="boxes-cad">
                     <div className="box-cad">

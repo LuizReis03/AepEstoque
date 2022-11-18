@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import { useNavigate } from 'react-router-dom';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
-import { BsFileEarmarkPdfFill } from 'react-icons/bs'
 
 //Services
 import api from '../services/api';
@@ -140,6 +139,10 @@ function ListaProdutos() {
             <Header />
 
             <h1 className='titulo-lista'>Produtos</h1>
+            <div className='div-relatorio'>
+                <h3 className='titulo-relatorio'>Relatório</h3>
+                <button id="pdf" type="button" onClick={geraPdf}/>
+            </div>
             <ul className='box-lista'>
                 {products.map(product => (
                     <li className='lista' key={product.id}>
@@ -152,7 +155,7 @@ function ListaProdutos() {
                         <p className='descricao-campo-lista'>{product.descricao}</p>
                         <strong className='titulo-campo-lista'>QUANTIDADE:</strong>
                         <p className='valor-campo-lista'>{product.quantidade}</p>
-
+                    
                         <input className='btn-lista-edit' onClick={() => editProduct(product.id)}
                             type="submit" value="" />
 
@@ -163,11 +166,7 @@ function ListaProdutos() {
                     </li>
                 ))}
             </ul>
-
-            <h3> Gerar Pdf:</h3>
-            <button id="pdf" type="button" onClick={geraPdf}>
-                <BsFileEarmarkPdfFill />
-            </button>
+            
         </div>
     );
 

@@ -4,20 +4,21 @@
 }
 
 .box-lista{
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 800%;
+    max-width: 90%;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    margin: auto;
 }
 
 .lista{
     padding: 1.5% 0%;
-    background-color: #ebebeb;
-    border-radius: 10px;
     display: flex;
     align-items: center;
     width: 85%;
     max-width: 88%;
     justify-content: flex-start;
+    margin: auto;
 }
 
 .titulo-campo-lista{
@@ -37,7 +38,7 @@
 }
 
 .btn-lista-edit{
-    margin-left: 12%;
+    margin-left: auto;
     background-color: #cecece;
     border: none;
     border-radius: 10px;
@@ -47,7 +48,6 @@
     background-size: 1.5vw;
     background-repeat: no-repeat;
     background-position: center;
-    
 }
 
 .btn-lista-edit:hover{
@@ -56,6 +56,7 @@
 
 .btn-lista-delete{
     margin-left: 2%;
+    margin-right: 2%;
     background-color: #cecece;
     border: none;
     border-radius: 10px;
@@ -71,4 +72,31 @@
 
 .btn-lista-delete:hover{
     background-color: #adadad;
+}
+
+.div-relatorio{
+    width: 20%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.titulo-relatorio{
+    font-size: 1.3vw;
+}
+
+#pdf{
+    margin-left: 3%;
+    background-color: #cecece;
+    border: none;
+    border-radius: 10px;
+    width: 12%;
+    height: 30px;
+    padding: 1% 2%;
+    text-align: center;
+    background-image: url("../img/dowload.png");
+    background-size: 1.7vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
 }

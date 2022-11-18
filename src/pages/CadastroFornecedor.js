@@ -106,7 +106,7 @@ function CadastroFornecedor() {
 
                 <label className='titulo-campo-form'>Empresa</label>
                 <input name="empresa" type="option" className='campo-form'
-                value={email}
+                value={empresa}
                     onChange={e => setEmpresa(e.target.value)} />
 
                 <label className='titulo-campo-form'>Telefone</label>
