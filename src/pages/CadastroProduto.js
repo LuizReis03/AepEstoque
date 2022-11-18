@@ -144,7 +144,7 @@ function CadastroProduto() {
         <div>
             <Header />
             <form onSubmit={saveOrUpdate} className="box-form">
-                <h2 className="titulo-form">CADASTRO PRODUTO</h2>
+                <h2 className="titulo-form">{productId === '0' ? "CADASTRO PRODUTO" : "ATUALIZA PRODUTO"}</h2>
 
                 <label className='titulo-campo-form'>Nome produto</label>
                 <input name="nomeProduto" type="text" className='campo-form'

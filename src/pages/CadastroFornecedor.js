@@ -97,7 +97,7 @@ function CadastroFornecedor() {
         <div>
             <Header />
             <form onSubmit={saveOrUpdate} className="box-form">
-                <h2 className="titulo-form"></h2>
+                <h2 className="titulo-form">{providerId === '0' ? "CADASTRO FORNECEDOR" : "ATUALIZA FORNECEDOR"}</h2>
 
                 <label className='titulo-campo-form'>Nome</label>
                 <input name="nome" type="text" className='campo-form'
