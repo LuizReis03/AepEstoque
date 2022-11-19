@@ -26,7 +26,7 @@ function CadastroFuncionario() {
     const accessToken = localStorage.getItem('accessToken');
 
 
-    const { categoryId } = useParams();
+    const { funcionarioId } = useParams();
 
     async function saveOrUpdate(e) {
         e.preventDefault();
@@ -40,7 +40,7 @@ function CadastroFuncionario() {
         };
 
         try {
-            if (categoryId === '0') {
+            if (funcionarioId === '0') {
                 await api.post('api/v1/category', data, {
                     headers: {
                         Authorization: `Bearer ${accessToken}`
