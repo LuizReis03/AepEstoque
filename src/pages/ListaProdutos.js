@@ -151,7 +151,7 @@ function ListaProdutos() {
                         <p className='valor-campo-lista'>{product.id}</p>
                         <strong className='titulo-campo-lista'>NOME:</strong>
                         <p className='valor-campo-lista'>{product.nome}</p>
-                        <strong className='titulo-campo-lista'>DESCIRCAO:</strong>
+                        <strong className='titulo-campo-lista'>DESCRIÇÂO:</strong>
                         <p className='descricao-campo-lista'>{product.descricao}</p>
                         <strong className='titulo-campo-lista'>QUANTIDADE:</strong>
                         <p className='valor-campo-lista'>{product.quantidade}</p>

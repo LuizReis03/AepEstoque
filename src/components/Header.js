@@ -24,6 +24,10 @@ function Header() {
                     <Link to="/listaFornecedores">
                         <h3 class="link-header">Fornecedores</h3>
                     </Link>
+
+                    <Link to="/listaCategorias">
+                        <h3 class="link-header">Categorias</h3>
+                    </Link>
                 </div>
             </header>
         </div>

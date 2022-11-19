@@ -31,7 +31,7 @@ function Home() {
                 <div className="boxes-cad">
                     <div className="box-cad">
                         <h3 className="titulo-cad">CADASTRO DE CATEGORIA</h3>
-                        <Link to="/cadastroCategoria">
+                        <Link to="/cadastroCategoria/0">
                             <img className="img-cad-home" src={mais} />
                         </Link>
                     </div>
@@ -49,7 +49,7 @@ function Home() {
                     </div>
                     <div className="box-cad">
                         <h3 className="titulo-cad">CADASTRO DE FUNCIONÁRIO</h3>
-                        <Link to="/cadastroFuncionario">
+                        <Link to="/cadastroFuncionario/0">
                             <img className="img-cad-home" src={mais} />
                         </Link>
                     </div>

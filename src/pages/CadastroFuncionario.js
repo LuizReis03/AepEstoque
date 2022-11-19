@@ -1,6 +1,6 @@
 //Libs
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 //Static
 import "../static/css/formulario.css";
@@ -13,32 +13,51 @@ import api from '../services/api';
 
 function CadastroFuncionario() {
 
+    const [id, setId] = useState('');
     const [nome, setNome] = useState('');
     const [sobrenome, setSobrenome] = useState('');
-    const [telefone, setTel] = useState('');
     const [cpf, setCpf] = useState('');
     const [senha, setSenha] = useState('');
+    const [email, setEmail] = useState('');
 
     let navigate = useNavigate();
 
-    async function cadProduto(e) {
+
+    const accessToken = localStorage.getItem('accessToken');
+
+
+    const { categoryId } = useParams();
+
+    async function saveOrUpdate(e) {
         e.preventDefault();
 
         const data = {
-            nome,
-            sobrenome,
-            telefone,
-            cpf,
-            senha
+           nome,
+           sobrenome,
+           cpf,
+           senha,
+           email
         };
 
         try {
-            const response = await api.post('cadProduto', data);
+            if (categoryId === '0') {
+                await api.post('api/v1/category', data, {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                });
+            } else {
+                data.id = id;
+                await api.put('api/v1/category', data, {
+                    headers: {
+                        Authorization: `Bearer ${accessToken}`
+                    }
+                });
+            }
 
-            localStorage.setItem('accessToken', response.data);
 
-
-            navigate("./cadastroProduto", { replace: true });
+            
+            navigate(`/ListaCategorias`)
         } catch (err) {
             console.log(err)
             alert('Insira os dados corretamente e tente novamente!!!');
@@ -59,9 +78,9 @@ function CadastroFuncionario() {
                 <input name="sobrenome" type="option" className='campo-form'
                     onChange={e => setSobrenome(e.target.value)} />
 
-                <label className='titulo-campo-form'>Telefone</label>
-                <input name="telefone" type="text" className='campo-form'
-                    onChange={e => setTel(e.target.value)} />
+                <label className='titulo-campo-form'>Email</label>
+                <input name="email" type="email" className='campo-form'
+                    onChange={e => setEmail(e.target.value)} />
 
                 <label className='titulo-campo-form'>CPF</label>
                 <input name="cpf" type="text" className='campo-form'
